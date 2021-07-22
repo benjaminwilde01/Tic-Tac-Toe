@@ -20,22 +20,29 @@ const square = document.querySelectorAll('.square');
 
 
 const oneTurn = (ev) => {
-    // console.log(ev)
-    if (ev.currentTarget.innerText === "" && xCount.length === oCount.length) {
+    
+
+    if (xCount.length === oCount.length) {
         ev.currentTarget.innerText = "X"
-        xCount.push(ev.currentTarget.id)
-    }
-    else if (xCount.length === oCount.length) {
-        ev.currentTarget.innerText = "X"
-        xCount.push(ev.currentTarget.id)
+        xCount.push(Number(ev.currentTarget.id))
     }
     else if (xCount.length > oCount.length) {
         ev.currentTarget.innerText = "O"
-        oCount.push(ev.currentTarget.id)
+        oCount.push(Number(ev.currentTarget.id))
+        console.log(oCount)
     }
-    
+    determineWinner()
+}
+
+const determineWinner = () => {
+    for (let i = 0; i < winningConditions.length; i++) {
+        if (winningConditions[i].every(space => xCount.includes(space))) {
+            alert('Player 1 wins')
+        }
+    }
 }
 
 for (i = 0; i < square.length; i++) {
     square[i].addEventListener('click', oneTurn, {once:true})
 }
+
