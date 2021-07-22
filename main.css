@@ -16,3 +16,7 @@ td {
   font-size: 60px;
   text-align: center;
 }
+
+.square {
+    border: 1px solid black;
+}
