@@ -1,7 +1,9 @@
 const main = document.querySelector('.main')
 
-let xCount = []
-let oCount = []
+let xMoves = []
+let oMoves = []
+// let winner = false
+let totalMoves = 0
 
 const winningConditions = [
     [0, 1, 2],
@@ -17,27 +19,38 @@ const winningConditions = [
 const square = document.querySelectorAll('.square');
 // console.log(square)
 
-
-
-const oneTurn = (ev) => {
-    
-
-    if (xCount.length === oCount.length) {
-        ev.currentTarget.innerText = "X"
-        xCount.push(Number(ev.currentTarget.id))
+// if (winner) {
+//     return 
+// } else {
+    const oneTurn = (ev) => {
+        if (xMoves.length === oMoves.length) {
+            ev.currentTarget.innerText = "X"
+            xMoves.push(Number(ev.currentTarget.id))
+            totalMoves += 1
+            console.log(xMoves)
+        }
+        else if (xMoves.length > oMoves.length) {
+            ev.currentTarget.innerText = "O"
+            oMoves.push(Number(ev.currentTarget.id))
+            totalMoves += 1
+            console.log(oMoves)
+        }
+        console.log(totalMoves)
+        determineWinner()
     }
-    else if (xCount.length > oCount.length) {
-        ev.currentTarget.innerText = "O"
-        oCount.push(Number(ev.currentTarget.id))
-        console.log(oCount)
-    }
-    determineWinner()
-}
+// }
 
 const determineWinner = () => {
     for (let i = 0; i < winningConditions.length; i++) {
-        if (winningConditions[i].every(space => xCount.includes(space))) {
+        if (winningConditions[i].every(space => xMoves.includes(space))) {
             alert('Player 1 wins')
+            // winner = true
+        } else if (winningConditions[i].every(space => oMoves.includes(space))) {
+            alert('Player 2 wins')
+            // winner = true
+        } else if (totalMoves === 9) {
+            alert('Its a tie')
+            break
         }
     }
 }
