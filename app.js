@@ -1,13 +1,16 @@
+const main = document.querySelector('.main')
+
+
 const square = document.getElementsByClassName('square');
 console.log(square)
 
 
 
 
-const click = () => {
-    console.log("connected")
+const test = () => {
+    console.log("you clicked me!")
 }
 
-// square.addEventListener('click', click)
-
-// square.forEach((element) => element.addEventListener('click',click))
+for (i = 0; i < square.length; i++) {
+    square[i].addEventListener('click', test)
+}
