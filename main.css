@@ -20,3 +20,7 @@ td {
 .square {
     border: 1px solid black;
 }
+
+.hidden-board{
+  display: none;
+}
