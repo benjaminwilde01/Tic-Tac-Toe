@@ -1,5 +1,5 @@
-const square = document.getElementsByClassName('square');
-console.log(square)
+const square = document.querySelectorAll('.square');
+// console.log(square)
 
 
 
