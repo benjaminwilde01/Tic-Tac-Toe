@@ -1,5 +1,6 @@
 const main = document.querySelector('.main')
-const startButton = document.querySelector('.hidden-board')
+const board = document.querySelector('.hidden-board')
+const startButton = document.querySelector('.startButton')
 
 let xMoves = []
 let oMoves = []
@@ -18,7 +19,7 @@ const winningConditions = [
 ]
 
 const startGame = () => {
-    startButton.classList.toggle()
+    board.classList.toggle('show')
     console.log('working')
 }
 
