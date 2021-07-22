@@ -1,4 +1,5 @@
 const main = document.querySelector('.main')
+const startButton = document.querySelector('.hidden-board')
 
 let xMoves = []
 let oMoves = []
@@ -15,6 +16,18 @@ const winningConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ]
+
+const startGame = () => {
+    startButton.classList.toggle()
+    console.log('working')
+}
+
+const resetGame = () => {
+    xMoves = [],
+    oMoves = [],
+    totalMoves = 0,
+    square.forEach((element)=> element.innerText.remove())
+}
 
 const square = document.querySelectorAll('.square');
 // console.log(square)
@@ -45,9 +58,11 @@ const determineWinner = () => {
         if (winningConditions[i].every(space => xMoves.includes(space))) {
             alert('Player 1 wins')
             // winner = true
+            break
         } else if (winningConditions[i].every(space => oMoves.includes(space))) {
             alert('Player 2 wins')
             // winner = true
+            break
         } else if (totalMoves === 9) {
             alert('Its a tie')
             break
