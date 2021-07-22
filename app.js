@@ -1,1 +1,13 @@
-console.log("connected")
+const square = document.getElementsByClassName('square');
+console.log(square)
+
+
+
+
+const click = () => {
+    console.log("connected")
+}
+
+// square.addEventListener('click', click)
+
+// square.forEach((element) => element.addEventListener('click',click))
