@@ -18,9 +18,13 @@ td {
 }
 
 .square {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
-.hidden-board{
+.hidden-board {
   display: none;
+}
+
+.show {
+  display: block;
 }
