@@ -1,5 +1,6 @@
 body {
   /* background-color: aqua; */
+  font-family: 'Odibee Sans', monospace;
   height: 100vh;
 }
 
@@ -42,6 +43,12 @@ td {
     flex-flow: row nowrap;
     justify-content: space-around;
     text-align: center;
+}
+
+.game-over-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 .x-wins-title, .o-wins-title, .current-player-title {
