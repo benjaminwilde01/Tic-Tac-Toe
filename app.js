@@ -20,6 +20,7 @@ const winningConditions = [
 
 const startGame = () => {
     board.classList.toggle('show')
+    startButton.classList.toggle('hide')
     console.log('working')
 }
 
