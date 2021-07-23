@@ -22,6 +22,9 @@ const startGame = () => {
     board.classList.toggle('show')
     startButton.classList.toggle('hide')
     console.log('working')
+    for (i = 0; i < square.length; i++) {
+        square[i].addEventListener('click', oneTurn, {once:true})
+    }
 }
 
 const resetGame = () => {
@@ -72,7 +75,5 @@ const determineWinner = () => {
     }
 }
 
-for (i = 0; i < square.length; i++) {
-    square[i].addEventListener('click', oneTurn, {once:true})
-}
+
 
