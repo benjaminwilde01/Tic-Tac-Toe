@@ -12,6 +12,12 @@
 
 <body>
     <h1 class="header">Tic Tac Toe</h1>
+
+    <div class="player-x-wins">
+        <h3>Player X Wins: </h3>
+        <h2 class="x-win-count"></h2>
+    </div>
+
     <div class="main">
         <button onclick="startGame()" class="start-button">Start Game</button>
         <table class="hidden-board">
@@ -32,7 +38,13 @@
             </tr>
         </table>
     </div>
-    <h4 class="game-result"></h4>
+
+    <div class="player-o-wins">
+        <h3>Player O Wins: </h3>
+        <h2 class="o-win-count"></h2>
+    </div>
+
+    <h2 class="game-result"></h2>
     <button onclick="resetGame()" class="reset-button">Reset Game</button>
 </body>
 
