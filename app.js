@@ -70,7 +70,7 @@ const showResetBtn = () => {
     }
 // }
 
-const determineWinner = () => {
+const determineWinnerX = () => {
     for (let i = 0; i < winningConditions.length; i++) {
         if (winningConditions[i].every(space => xMoves.includes(space))) {
             alert('Player 1 wins')
@@ -80,7 +80,13 @@ const determineWinner = () => {
             }
             showResetBtn()
             break
-        } else if (winningConditions[i].every(space => oMoves.includes(space))) {
+        }
+    }
+}
+
+const determineWinnerO = () => {
+    for (let i = 0; i < winningConditions.length; i++) {
+        if (winningConditions[i].every(space => oMoves.includes(space))) {
             alert('Player 2 wins')
             // winner = true
             for (i = 0; i < square.length; i++) {
@@ -88,7 +94,13 @@ const determineWinner = () => {
             }
             showResetBtn()
             break
-        } else if (totalMoves === 9) {
+        }
+    }
+}
+
+const determineTie = () => {
+    for (let i = 0; i < winningConditions.length; i++) {
+        if (totalMoves === 9) {
             alert('Its a tie')
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
@@ -97,4 +109,10 @@ const determineWinner = () => {
             break
         }
     }
+}
+
+const determineWinner = () => {
+    determineWinnerX()
+    determineWinnerO()
+    determineTie()
 }
