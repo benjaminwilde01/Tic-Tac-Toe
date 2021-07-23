@@ -1,7 +1,9 @@
 const main = document.querySelector('.main')
 const board = document.querySelector('.hidden-board')
 const square = document.querySelectorAll('.square');
-const startButton = document.querySelector('.startButton')
+const startButton = document.querySelector('.start-button')
+const gameResult = document.querySelector('.game-result')
+const resetButton = document.querySelector('.reset-button')
 
 let xMoves = []
 let oMoves = []
@@ -32,6 +34,7 @@ const restartGame = () => {
     for (i = 0; i < square.length; i++) {
         square[i].addEventListener('click', oneTurn, {once:true})
     }
+    showResetBtn()
 }
 
 const resetGame = () => {
@@ -40,6 +43,10 @@ const resetGame = () => {
     totalMoves = 0,
     square.forEach((element)=> element.innerText = '')
     restartGame()
+}
+
+const showResetBtn = () => {
+    resetButton.classList.toggle('show')
 }
 
 // if (winner) {
@@ -71,7 +78,7 @@ const determineWinner = () => {
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
-            resetGame()
+            showResetBtn()
             break
         } else if (winningConditions[i].every(space => oMoves.includes(space))) {
             alert('Player 2 wins')
@@ -79,14 +86,14 @@ const determineWinner = () => {
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
-            resetGame()
+            showResetBtn()
             break
         } else if (totalMoves === 9) {
             alert('Its a tie')
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
-            resetGame()
+            showResetBtn()
             break
         }
     }
