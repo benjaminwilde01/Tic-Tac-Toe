@@ -13,9 +13,19 @@
 <body>
     <h1 class="header">Tic Tac Toe</h1>
 
-    <div class="player-x-wins">
-        <h3>Player X Wins: </h3>
-        <h2 class="x-win-count"></h2>
+    <div class="game-info">
+        <div class="player-x-wins">
+            <h3 class="x-wins-title">Player X Wins</h3>
+            <h2 class="x-win-count"></h2>
+        </div>
+        <div>
+            <h3 class="current-player-title">Next Turn</h3>
+            <h2 class="current-player"></h2>
+        </div>
+        <div class="player-o-wins">
+            <h3 class="o-wins-title">Player O Wins</h3>
+            <h2 class="o-win-count"></h2>
+        </div>
     </div>
 
     <div class="main">
@@ -37,11 +47,6 @@
                 <td id="8" class="square"></td>
             </tr>
         </table>
-    </div>
-
-    <div class="player-o-wins">
-        <h3>Player O Wins: </h3>
-        <h2 class="o-win-count"></h2>
     </div>
 
     <h2 class="game-result"></h2>

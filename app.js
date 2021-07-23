@@ -5,6 +5,8 @@ const startButton = document.querySelector('.start-button')
 const gameResult = document.querySelector('.game-result')
 const resetButton = document.querySelector('.reset-button')
 
+const gameInfo = document.querySelector('.game-info')
+const currentPlayer = document.querySelector('.current-player')
 const PlayerXWins = document.querySelector('.player-x-wins')
 const PlayerOWins = document.querySelector('.player-o-wins')
 const xWinCount = document.querySelector('.x-win-count')
@@ -36,16 +38,17 @@ const startGame = () => {
     for (i = 0; i < square.length; i++) {
         square[i].addEventListener('click', oneTurn, {once:true})
     }
+    currentPlayer.innerText = 'X'
     xWinCount.innerText = xWins
     oWinCount.innerText = oWins
-    showPlayerWins()
+    toggleGameInfo()
 }
 
 const restartGame = () => {
     for (i = 0; i < square.length; i++) {
         square[i].addEventListener('click', oneTurn, {once:true})
     }
-    showResetBtn()
+    toggleResetBtn()
 }
 
 const resetGame = () => {
@@ -57,13 +60,14 @@ const resetGame = () => {
     gameResult.innerText = ''
 }
 
-const showResetBtn = () => {
+const toggleResetBtn = () => {
     resetButton.classList.toggle('show')
 }
 
-const showPlayerWins = () => {
-    PlayerXWins.classList.toggle('show')
-    PlayerOWins.classList.toggle('show')
+const toggleGameInfo = () => {
+    // PlayerXWins.classList.toggle('show')
+    // PlayerOWins.classList.toggle('show')
+    gameInfo.classList.toggle('show-game-info')
 }
 
 // if (winner) {
@@ -75,19 +79,21 @@ const showPlayerWins = () => {
             xMoves.push(Number(ev.currentTarget.id))
             totalMoves += 1
             console.log(xMoves)
+            currentPlayer.innerText = "O"
         }
         else if (xMoves.length > oMoves.length) {
             ev.currentTarget.innerText = "O"
             oMoves.push(Number(ev.currentTarget.id))
             totalMoves += 1
             console.log(oMoves)
+            currentPlayer.innerText = "X"
         }
         console.log(totalMoves)
         determineWinner()
     }
 // }
 
-const determineWinnerX = () => {
+const determineWinner = () => {
     for (let i = 0; i < winningConditions.length; i++) {
         if (winningConditions[i].every(space => xMoves.includes(space))) {
             // alert('Player 1 wins')
@@ -95,48 +101,32 @@ const determineWinnerX = () => {
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
-            showResetBtn()
+            toggleResetBtn()
             gameResult.innerText = 'Player X Wins'
             xWins++
             xWinCount.innerText = xWins
             break
         }
-    }
-}
-
-const determineWinnerO = () => {
-    for (let i = 0; i < winningConditions.length; i++) {
-        if (winningConditions[i].every(space => oMoves.includes(space))) {
+        else if (winningConditions[i].every(space => oMoves.includes(space))) {
             // alert('Player 2 wins')
             // winner = true
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
-            showResetBtn()
+            toggleResetBtn()
             gameResult.innerText = 'Player O Wins'
             oWins++
             oWinCount.innerText = oWins
             break
         }
-    }
-}
-
-const determineTie = () => {
-    for (let i = 0; i < winningConditions.length; i++) {
-        if (totalMoves === 9) {
+        else if (totalMoves === 9) {
             // alert('Its a tie')
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
-            showResetBtn()
+            toggleResetBtn()
             gameResult.innerText = `It's a tie!`
             break
         }
     }
-}
-
-const determineWinner = () => {
-    determineWinnerX()
-    determineWinnerO()
-    determineTie()
 }

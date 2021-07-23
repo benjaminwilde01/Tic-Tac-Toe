@@ -25,7 +25,7 @@ td {
   border: 1px solid black;
 }
 
-.hidden-board, .reset-button, .player-o-wins, .player-x-wins {
+.hidden-board, .reset-button, .game-info {
   display: none;
 }
 
@@ -35,4 +35,15 @@ td {
 
 .hide {
     display: none
+}
+
+.show-game-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.x-wins-title, .o-wins-title, .current-player-title {
+    text-decoration: underline;
 }
