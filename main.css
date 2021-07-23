@@ -44,6 +44,12 @@ td {
     text-align: center;
 }
 
+.game-over-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
 .x-wins-title, .o-wins-title, .current-player-title {
     text-decoration: underline;
 }
