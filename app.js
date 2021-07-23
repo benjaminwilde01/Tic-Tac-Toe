@@ -63,17 +63,23 @@ const determineWinner = () => {
         if (winningConditions[i].every(space => xMoves.includes(space))) {
             alert('Player 1 wins')
             // winner = true
+            for (i = 0; i < square.length; i++) {
+                square[i].removeEventListener('click', oneTurn, {once:true})
+            }
             break
         } else if (winningConditions[i].every(space => oMoves.includes(space))) {
             alert('Player 2 wins')
             // winner = true
+            for (i = 0; i < square.length; i++) {
+                square[i].removeEventListener('click', oneTurn, {once:true})
+            }
             break
         } else if (totalMoves === 9) {
             alert('Its a tie')
+            for (i = 0; i < square.length; i++) {
+                square[i].removeEventListener('click', oneTurn, {once:true})
+            }
             break
         }
     }
 }
-
-
-
