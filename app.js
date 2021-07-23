@@ -43,6 +43,7 @@ const resetGame = () => {
     totalMoves = 0,
     square.forEach((element)=> element.innerText = '')
     restartGame()
+    gameResult.innerText = ''
 }
 
 const showResetBtn = () => {
@@ -73,12 +74,13 @@ const showResetBtn = () => {
 const determineWinnerX = () => {
     for (let i = 0; i < winningConditions.length; i++) {
         if (winningConditions[i].every(space => xMoves.includes(space))) {
-            alert('Player 1 wins')
+            // alert('Player 1 wins')
             // winner = true
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
             showResetBtn()
+            gameResult.innerText = 'Player X Wins'
             break
         }
     }
@@ -87,12 +89,13 @@ const determineWinnerX = () => {
 const determineWinnerO = () => {
     for (let i = 0; i < winningConditions.length; i++) {
         if (winningConditions[i].every(space => oMoves.includes(space))) {
-            alert('Player 2 wins')
+            // alert('Player 2 wins')
             // winner = true
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
             showResetBtn()
+            gameResult.innerText = 'Player O Wins'
             break
         }
     }
@@ -101,11 +104,12 @@ const determineWinnerO = () => {
 const determineTie = () => {
     for (let i = 0; i < winningConditions.length; i++) {
         if (totalMoves === 9) {
-            alert('Its a tie')
+            // alert('Its a tie')
             for (i = 0; i < square.length; i++) {
                 square[i].removeEventListener('click', oneTurn, {once:true})
             }
             showResetBtn()
+            gameResult.innerText = `It's a tie!`
             break
         }
     }
