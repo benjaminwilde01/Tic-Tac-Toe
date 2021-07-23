@@ -5,6 +5,7 @@ const startButton = document.querySelector('.start-button')
 const gameResult = document.querySelector('.game-result')
 const resetButton = document.querySelector('.reset-button')
 
+const gameInfo = document.querySelector('.game-info')
 const PlayerXWins = document.querySelector('.player-x-wins')
 const PlayerOWins = document.querySelector('.player-o-wins')
 const xWinCount = document.querySelector('.x-win-count')
@@ -38,7 +39,7 @@ const startGame = () => {
     }
     xWinCount.innerText = xWins
     oWinCount.innerText = oWins
-    showPlayerWins()
+    toggleGameInfo()
 }
 
 const restartGame = () => {
@@ -61,9 +62,10 @@ const showResetBtn = () => {
     resetButton.classList.toggle('show')
 }
 
-const showPlayerWins = () => {
-    PlayerXWins.classList.toggle('show')
-    PlayerOWins.classList.toggle('show')
+const toggleGameInfo = () => {
+    // PlayerXWins.classList.toggle('show')
+    // PlayerOWins.classList.toggle('show')
+    gameInfo.classList.toggle('show-game-info')
 }
 
 // if (winner) {
