@@ -25,12 +25,8 @@ td {
   border: 1px solid black;
 }
 
-.hidden-board {
+.hidden-board, .reset-button, .player-o-wins, .player-x-wins {
   display: none;
-}
-
-.reset-button {
-    display: none;
 }
 
 .show {

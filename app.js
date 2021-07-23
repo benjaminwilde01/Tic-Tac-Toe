@@ -5,10 +5,18 @@ const startButton = document.querySelector('.start-button')
 const gameResult = document.querySelector('.game-result')
 const resetButton = document.querySelector('.reset-button')
 
+const PlayerXWins = document.querySelector('.player-x-wins')
+const PlayerOWins = document.querySelector('.player-o-wins')
+const xWinCount = document.querySelector('.x-win-count')
+const oWinCount = document.querySelector('.o-win-count')
+
 let xMoves = []
 let oMoves = []
 // let winner = false
 let totalMoves = 0
+
+let xWins = 0
+let oWins = 0
 
 const winningConditions = [
     [0, 1, 2],
@@ -28,6 +36,9 @@ const startGame = () => {
     for (i = 0; i < square.length; i++) {
         square[i].addEventListener('click', oneTurn, {once:true})
     }
+    xWinCount.innerText = xWins
+    oWinCount.innerText = oWins
+    showPlayerWins()
 }
 
 const restartGame = () => {
@@ -48,6 +59,11 @@ const resetGame = () => {
 
 const showResetBtn = () => {
     resetButton.classList.toggle('show')
+}
+
+const showPlayerWins = () => {
+    PlayerXWins.classList.toggle('show')
+    PlayerOWins.classList.toggle('show')
 }
 
 // if (winner) {
