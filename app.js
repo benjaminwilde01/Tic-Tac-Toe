@@ -49,6 +49,7 @@ const restartGame = () => {
         square[i].addEventListener('click', oneTurn, {once:true})
     }
     toggleResetBtn()
+    currentPlayer.innerText = 'X'
 }
 
 const resetGame = () => {
