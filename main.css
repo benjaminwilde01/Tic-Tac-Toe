@@ -41,4 +41,9 @@ td {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    text-align: center;
+}
+
+.x-wins-title, .o-wins-title, .current-player-title {
+    text-decoration: underline;
 }
