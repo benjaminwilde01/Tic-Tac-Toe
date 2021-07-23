@@ -97,6 +97,8 @@ const determineWinnerX = () => {
             }
             showResetBtn()
             gameResult.innerText = 'Player X Wins'
+            xWins++
+            xWinCount.innerText = xWins
             break
         }
     }
@@ -112,6 +114,8 @@ const determineWinnerO = () => {
             }
             showResetBtn()
             gameResult.innerText = 'Player O Wins'
+            oWins++
+            oWinCount.innerText = oWins
             break
         }
     }
