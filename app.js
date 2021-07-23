@@ -28,11 +28,18 @@ const startGame = () => {
     }
 }
 
+const restartGame = () => {
+    for (i = 0; i < square.length; i++) {
+        square[i].addEventListener('click', oneTurn, {once:true})
+    }
+}
+
 const resetGame = () => {
     xMoves = [],
     oMoves = [],
     totalMoves = 0,
     square.forEach((element)=> element.innerText = '')
+    restartGame()
 }
 
 // if (winner) {
