@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
     <script src="./app.js" defer></script>
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
 </head>
 
 <body>
+    <h1 class="header">Tic Tac Toe</h1>
     <div class="main">
-        <button onclick="startGame()" class="startButton">Start Game</button>
+        <button onclick="startGame()" class="start-button">Start Game</button>
         <table class="hidden-board">
             <tr>
                 <td id="0" class="square"></td>
@@ -31,6 +32,8 @@
             </tr>
         </table>
     </div>
+    <h4 class="game-result"></h4>
+    <button onclick="resetGame()" class="reset-button">Reset Game</button>
 </body>
 
 </html>
