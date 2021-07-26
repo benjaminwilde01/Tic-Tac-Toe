@@ -123,13 +123,22 @@ const determineWinner = () => {
             break
         }
         else if (totalMoves === 9) {
+            if (winningConditions[i].every(space => xMoves.includes(space))) {
             // alert('Its a tie')
-            for (i = 0; i < square.length; i++) {
-                square[i].removeEventListener('click', oneTurn, {once:true})
+                for (i = 0; i < square.length; i++) {
+                    square[i].removeEventListener('click', oneTurn, {once:true})
+                }
+                toggleResetBtn()
+                gameResult.innerText = `Player X Wins`
+                break
+            } else if (totalMoves === 9) {
+                for (i = 0; i < square.length; i++) {
+                    square[i].removeEventListener('click', oneTurn, {once:true})
+                }
+                toggleResetBtn()
+                gameResult.innerText = `It's a tie!`
+                break
             }
-            toggleResetBtn()
-            gameResult.innerText = `It's a tie!`
-            break
         }
     }
 }

@@ -1,20 +1,31 @@
 body {
-  /* background-color: aqua; */
-  font-family: "Odibee Sans", monospace;
+  background-image: linear-gradient(rgb(18, 15, 38), rgb(241, 149, 149));
+  font-family: "Press Start 2P", monospace;
   height: 100vh;
-}
-
-header {
-  display: flex;
-  height: 10%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background-color: blue;
+  margin: 0;
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+  background-color: rgb(18, 15, 38);
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  color: white;
+}
+
+button {
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(18, 15, 38);
+}
+
+button:hover {
+  background-color: rgb(55, 45, 121);
+  color: white;
 }
 
 .main {
@@ -32,7 +43,7 @@ td {
 }
 
 .square {
-  border: 1px solid black;
+  border: 1px solid whitesmoke;
   border-radius: 5px;
 }
 
@@ -49,6 +60,10 @@ td {
 
 .hide {
   display: none;
+}
+
+.game-info {
+  color: white;
 }
 
 .show-game-info {
@@ -68,9 +83,4 @@ td {
 .o-wins-title,
 .current-player-title {
   text-decoration: underline;
-}
-
-.start-button {
-  background-color: brown;
-  border-radius: 10px;
 }
