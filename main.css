@@ -1,11 +1,11 @@
 body {
   /* background-color: aqua; */
-  font-family: 'Odibee Sans', monospace;
+  font-family: "Odibee Sans", monospace;
   height: 100vh;
 }
 
 .header {
-    text-align: center;
+  text-align: center;
 }
 
 .main {
@@ -26,31 +26,36 @@ td {
   border: 1px solid black;
 }
 
-.hidden-board, .reset-button, .game-info {
+.hidden-board,
+.reset-button,
+.game-info {
   display: none;
 }
 
 .show {
   display: block;
+  border-collapse: collapse;
 }
 
 .hide {
-    display: none
+  display: none;
 }
 
 .show-game-info {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  text-align: center;
 }
 
 .game-over-info {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
-.x-wins-title, .o-wins-title, .current-player-title {
-    text-decoration: underline;
+.x-wins-title,
+.o-wins-title,
+.current-player-title {
+  text-decoration: underline;
 }
