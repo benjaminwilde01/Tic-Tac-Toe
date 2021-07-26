@@ -24,6 +24,7 @@ td {
 
 .square {
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .hidden-board, .reset-button, .game-info {
@@ -32,6 +33,7 @@ td {
 
 .show {
   display: block;
+  border-collapse: collapse;
 }
 
 .hide {
