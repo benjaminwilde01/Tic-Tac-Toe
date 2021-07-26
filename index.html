@@ -14,7 +14,10 @@
 </head>
 
 <body>
-    <h1 class="header">Tic Tac Toe</h1>
+    <div class='header'>
+        <h1>Tic Tac Toe</h1>
+        <button onclick="startGame()" class="start-button">Start Game</button>
+    </div>
 
     <div class="game-info">
         <div class="player-x-wins">
@@ -32,7 +35,7 @@
     </div>
 
     <div class="main">
-        <button onclick="startGame()" class="start-button">Start Game</button>
+
         <table class="hidden-board">
             <tr>
                 <td id="0" class="square"></td>
