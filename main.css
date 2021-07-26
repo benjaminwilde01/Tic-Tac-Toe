@@ -17,6 +17,17 @@ body {
     color: white
 }
 
+button {
+  border-radius: 10px;
+  background-color: white;
+  color:rgb(18, 15, 38)
+}
+
+button:hover {
+  background-color: rgb(55, 45, 121);
+  color:white;
+} 
+
 .main {
   display: flex;
   justify-content: center;
