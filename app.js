@@ -94,6 +94,8 @@ const toggleGameInfo = () => {
     }
 // }
 
+// Bug: X winning on last turn is a tie when X is diagonal from top left to bottom right, and across the bottom simultaneously
+
 const determineWinner = () => {
     for (let i = 0; i < winningConditions.length; i++) {
         if (winningConditions[i].every(space => xMoves.includes(space))) {
